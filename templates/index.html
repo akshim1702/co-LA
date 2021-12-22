@@ -8,6 +8,216 @@
     <title>ML API</title>
     <link rel="stylesheet" href="./css/index.css">
 
+    <style>
+        * {
+            text-align: center;
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* background-image: url('../../static/images/world.jpg'); */
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .bg {
+            animation: slide 3s ease-in-out infinite alternate;
+            background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+            bottom: 0;
+            left: -50%;
+            opacity: .5;
+            position: fixed;
+            right: -50%;
+            top: 0;
+            z-index: -1;
+        }
+
+        .bg2 {
+            animation-direction: alternate-reverse;
+            animation-duration: 4s;
+        }
+
+        .bg3 {
+            animation-duration: 5s;
+        }
+
+        .title {
+            background-color: rgba(255, 255, 255, .8);
+            border-radius: .25em;
+            box-shadow: 0 0 .25em rgba(0, 0, 0, .25);
+            box-sizing: border-box;
+            text-align: center;
+            padding: 1rem 0rem;
+        }
+
+
+        @keyframes slide {
+            0% {
+                transform: translateX(-25%);
+            }
+
+            100% {
+                transform: translateX(25%);
+            }
+        }
+
+
+        .Sub-title {
+            background-color: rgba(255, 255, 255, .8);
+            border-radius: 1em;
+            text-align: center;
+            display: flex;
+            justify-items: center;
+            box-shadow: 0 0 .25em rgba(0, 0, 0, .25);
+            box-sizing: border-box;
+            width: 50%;
+            text-align: center;
+            Padding: 1rem 4rem;
+            margin: 1rem 0rem;
+        }
+
+
+
+        .Container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 0px;
+            background-color: white;
+            width: 25vw;
+            height: 60vh;
+            border-radius: 20px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+
+        .box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100px;
+        }
+
+        .card {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: row;
+        }
+
+
+
+        input {
+            width: 100%;
+            border-radius: 5px;
+            height: 1.8rem;
+            border: 1px solid grey;
+        }
+
+        label {
+            font-size: 1.2rem;
+            margin-right: 1rem;
+            /* margin-bottom:10px; */
+        }
+
+
+
+        /* button animation */
+
+
+        .btn-deg {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            margin-left: 40%;
+            margin-right: 40%;
+
+        }
+
+        .check-btn {
+            width: 100%;
+            display: block;
+            position: relative;
+            z-index: 1;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 0px 9px 0px rgba(153, 11, 11, 0.644);
+        }
+
+        .check-btn-sub {
+            position: absolute;
+            z-index: -1;
+            width: 200%;
+            height: 100%;
+            background: -webkit-linear-gradient(right, #a3de00, #ec1f10, #00dbde, #f5b505);
+            background: linear-gradient(right, #f0ec21, #2bda1c, #53e410, #f01111);
+            left: -100%;
+            transition: all ease-in-out 0.4s;
+        }
+
+        button {
+            font-size: 16px;
+            color: white;
+            border: none;
+            outline: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            background: transparent;
+            padding: 1rem 8rem;
+        }
+
+        .check-btn:hover .check-btn-sub {
+            left: 0;
+        }
+
+
+
+
+
+        /* result  */
+
+
+        .predicted_text {
+            float: right;
+            background-color: rgba(255, 255, 255, .8);
+            border-radius: 1em;
+            text-align: center;
+            display: flex;
+            justify-items: center;
+            box-shadow: 0 0 .25em rgba(0, 0, 0, .25);
+            box-sizing: border-box;
+            width: 35%;
+            text-align: center;
+            Padding: 1rem 4rem;
+            margin: 0rem 0rem;
+
+        }
+
+        .predicted_text h1 {
+            font-size: 3rem;
+
+        }
+    </style>
+
 
 </head>
 
@@ -222,8 +432,8 @@
 
         <!-- Show predicted output using ML model -->
         <div class="predicted_text">
-                <h1>{{ Predicted__result }}</h1>
-            
+            <h1>{{ Predicted__result }}</h1>
+
         </div>
 
     </div>
