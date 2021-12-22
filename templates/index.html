@@ -1,0 +1,233 @@
+<!-- This is GUI for Breast Cancer Detection Application Using Machine Learning Classifer -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>ML API</title>
+    <link rel="stylesheet" href="./css/index.css">
+
+
+</head>
+
+<body>
+
+    <!-- Show Indian AI Hospital banner-->
+
+    <div class="head">
+        <div class="bg"></div>
+        <div class="bg bg2"></div>
+        <div class="bg bg3"></div>
+        <div class="title">
+            <h1><u>CO-LAB A VIRTUAL ASSISTANT</u></h1>
+        </div>
+    </div>
+
+
+
+    <div class="login">
+
+        <!-- Get input for predict the cancer -->
+        <center>
+            <form action="{{ url_for('predict')}}" method="post">
+                <div class="Sub-title">
+                    <h1><u>Enter the value of tumor features >>></u></h1>
+                </div>
+
+                <div class="card">
+                    <div class="Container">
+                        <div class="box">
+                            <label for="mean_radius">Mean_Radius</label>
+                            <input type="text" name="mean_radius" placeholder="mean radius" required="required"
+                                id="mean_radius" />
+                        </div>
+                        <div class="box">
+                            <label for="mean_texture">Mean_Texture</label>
+                            <input type="text" name="mean_texture" placeholder="mean texture" required="required"
+                                id="mean_texture" />
+                        </div>
+                        <div class="box">
+                            <label for="mean_perimeter">Mean_Perimeter</label>
+                            <input type="text" name="mean_perimeter" placeholder="mean perimeter" required="required"
+                                id="mean_perimeter" />
+                        </div>
+
+                        <div class="box">
+                            <label for="mean_area">Mean_Area</label>
+                            <input type="text" name="mean_area" placeholder="mean area" required="required"
+                                id="mean_area" />
+                        </div>
+
+                        <div class="box">
+                            <label for="mean_smoothness">Mean_Smoothness</label>
+                            <input type="text" name="mean_smoothness" placeholder="mean smoothness" id="mean_smoothness"
+                                required="required" />
+                        </div>
+
+                        <div class="box">
+                            <label for="mean_compactness">Mean_Compactness</label>
+                            <input type="text" name="mean_compactness" placeholder="mean compactness"
+                                required="required" id="mean_compactness" />
+                        </div>
+                        <div class="box">
+                            <label for="mean_concavity">Mean_Concavity</label>
+                            <input type="text" name="mean_concavity" placeholder="mean concavity" required="required"
+                                id="mean_concavity" />
+                        </div>
+                        <div class="box">
+                            <label for="mean_concave_points">Mean_Concave_Points</label>
+                            <input type="text" name="mean_concave_points" placeholder="mean concave points"
+                                required="required" id="mean_concave_points" />
+
+                        </div>
+                        <div class="box">
+                            <label for="mean_symmetry">Mean_Symmetry</label>
+                            <input type="text" name="mean_symmetry" placeholder="mean symmetry" required="required"
+                                id="mean_symmetry" />
+                        </div>
+
+                        <div class="box">
+                            <label for="mean_fractal_dimension">Mean_Fractal_Dimension</label>
+                            <input type="text" name="mean_fractal_dimension" placeholder="mean fractal dimension"
+                                required="required" id="mean_fractal_dimension" />
+                        </div>
+                    </div>
+                    <div class="Container">
+
+
+                        <div class="box">
+                            <label for="radius_error">Radius_Error</label>
+
+                            <input type="text" name="radius_error" placeholder="radius error" required="required"
+                                id="radius_error" />
+                        </div>
+
+                        <div class="box">
+                            <label for="texture_error">Texture_Error</label>
+                            <input type="text" name="texture_error" placeholder="texture error" required="required"
+                                id="texture_error" />
+                        </div>
+                        <div class="box">
+                            <label for="perimeter_error">Perimeter_Error</label>
+                            <input type="text" name="perimeter_error" placeholder="perimeter error" required="required"
+                                id="perimeter_error" />
+                        </div>
+
+                        <div class="box">
+                            <label for="area_error">Area_Error</label>
+                            <input type="text" name="area_error" placeholder="area error " required="required"
+                                id="area_error" />
+                        </div>
+
+                        <div class="box">
+                            <label for="smoothness_error">Smoothness_Error</label>
+                            <input type="text" name="smoothness_error" placeholder="smoothness error"
+                                required="required" />
+                        </div>
+
+                        <div class="box">
+                            <label for="compactness_error">Compactness_Error</label>
+                            <input type="text" name="compactness_error" placeholder="compactness error"
+                                required="required" id="compactness_error" />
+                        </div>
+                        <div class="box">
+                            <label for="concavity_error">Concavity_Error</label>
+                            <input type="text" name="concavity_error" placeholder="concavity error" required="required"
+                                id="concavity_error" />
+                        </div>
+                        <div class="box">
+                            <label for="concave_points_error">Concave_Points_Error</label>
+                            <input type="text" name="concave_points_error" placeholder="concave points error"
+                                required="required" id="concave_points_error" />
+                        </div>
+
+                        <div class="box">
+                            <label for="symmetry_error">Symmetry_Error</label>
+                            <input type="text" name="symmetry_error" placeholder="symmetry error" required="required"
+                                id="symmetry_error" />
+                        </div>
+                        <div class="box">
+                            <label for="fractal_dimension_error">Fractal_Dimension_Error</label>
+                            <input type="text" name="fractal_dimension_error" placeholder="fractal dimension error"
+                                required="required" id="fractal_dimension_error" />
+                        </div>
+                    </div>
+                    <div class="Container">
+                        <div class="box">
+                            <label for="worst_radius">Worst_Radius</label>
+                            <input type="text" name="worst_radius" placeholder="worst radius" required="required"
+                                id="worst_radius" />
+                        </div>
+                        <div class="box">
+                            <label for="worst_texture">Worst_Texture</label>
+                            <input type="text" name="worst_texture" placeholder="worst texture" required="required"
+                                id="worst_texture" />
+                        </div>
+                        <div class="box">
+                            <label for="worst_perimeter">Worst_Perimeter</label>
+                            <input type="text" name="worst_perimeter" placeholder="worst perimeter" required="required"
+                                id="worst_perimeter" />
+                        </div>
+                        <div class="box">
+                            <label for="worst_area">Worst_Area</label>
+                            <input type="text" name="worst_area" placeholder="worst area" required="required"
+                                id="worst_area" />
+                        </div>
+                        <div class="box">
+                            <label for="worst_smoothness">Worst_Smoothness</label>
+                            <input type="text" name="worst_smoothness" placeholder="worst smoothness"
+                                required="required" id="worst_smoothness" />
+                        </div>
+                        <div class="box">
+                            <label for="worst_compactness">Worst_Compactness</label>
+                            <input type="text" name="worst_compactness" placeholder="worst compactness"
+                                required="required" id="worst_compactness" />
+                        </div>
+                        <div class="box">
+                            <label for="worst_concavity">Worst_Concavity</label>
+                            <input type="text" name="worst_concavity" placeholder="worst concavity" required="required"
+                                id="worst_concavity" />
+                        </div>
+                        <div class="box">
+                            <label for="worst_concave_points">Worst_Concave_Points</label>
+                            <input type="text" name="worst_concave_points" placeholder="worst concave points"
+                                required="required" id="worst_concave_points" />
+                        </div>
+
+                        <div class="box">
+                            <label for="worst_symmetry">Worst_Symmetry</label>
+                            <input type="text" name="worst_symmetry" placeholder="'worst symmetry" required="required"
+                                id="worst_symmetry" />
+                        </div>
+                        <div class="box">
+                            <label for="worst_fractal_dimension">Worst_Fractal_Dimension</label>
+                            <input type="text" name="worst_fractal_dimension" placeholder="worst fractal dimension"
+                                required="required" id="worst_fractal_dimension" />
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Show button -->
+                <div class="btn-deg">
+                    <div class="check-btn">
+                        <div class="check-btn-sub"></div>
+                        <button type="submit">Predict Cancer</button>
+                    </div>
+                </div>
+
+            </form>
+        </center>
+
+        <!-- Show predicted output using ML model -->
+        <div class="predicted_text">
+                <h1>{{ Predicted__result }}</h1>
+            
+        </div>
+
+    </div>
+
+</body>
+
+</html>
