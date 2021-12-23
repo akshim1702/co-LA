@@ -209,7 +209,7 @@
             display: flex;
             justify-items: center;
             box-sizing: border-box;
-            width: 45%;
+            width: 35%;
             text-align: center;
             Padding: 1rem 4rem;
             margin: 0rem 0rem;
@@ -221,15 +221,15 @@
 
         }
 
-        .predicted_text h1 {
-            font-size: 3rem;
+        .predicted_text h3 {
+            font-size: 1.7rem;
         }
 
-        button:disabled,
+        /* button:disabled,
         button[disabled] {
             background-color: #cccccc;
             color: #666666;
-        }
+        } */
 
         @media (max-width:1600px) {
             .Container {
@@ -241,8 +241,8 @@
                 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
             }
 
-            .predicted_text h1 {
-                font-size: 2rem;
+            .predicted_text h3 {
+                font-size: 1.2rem;
 
             }
 
@@ -605,9 +605,9 @@
         <!-- Modal -->
         <div class="predicted_text main-div2 main-div">
 
-            <h1 type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <h3 type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                 Result:-&nbsp; {{ prediction_text }}
-            </h1>
+            </h3>
         </div>
 
         <!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
