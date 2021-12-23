@@ -23,7 +23,6 @@
         }
 
         body {
-            /* background-image: url('../../static/images/world.jpg'); */
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
@@ -226,45 +225,47 @@
 
         @media (max-width:1600px) {
             .Container {
-            padding: 10px 20px;
-            background-color: white;
-            width: 25vw;
-            height: 50vh;
-            border-radius: 20px;
-            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        }
+                padding: 10px 20px;
+                background-color: white;
+                width: 25vw;
+                height: 50vh;
+                border-radius: 20px;
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            }
 
-        .predicted_text h1 {
-            font-size: 2rem;
+            .predicted_text h1 {
+                font-size: 2rem;
 
-        }
-        button {
-            font-size: 16px;
-            width: 100%;
-            background: transparent;
-            padding: 1rem 5rem;
-        }
-        input {
-            width: 100%;
-            border-radius: 5px;
-            height: 1.2rem;
-            border: 1px solid grey;
-        }
+            }
 
-        label {
-            font-size: 1rem;
-            margin-right: 0.8rem;
-            /* margin-bottom:10px; */
-        }
-        .Sub-title {
-            border-radius: 1em;
-            width: 45%;
-            text-align: center;
-            Padding: 1rem 2rem;
-            margin: 1rem 0rem;
-        }
+            button {
+                font-size: 16px;
+                width: 100%;
+                background: transparent;
+                padding: 1rem 5rem;
+            }
 
-            
+            input {
+                width: 100%;
+                border-radius: 5px;
+                height: 1.2rem;
+                border: 1px solid grey;
+            }
+
+            label {
+                font-size: 1rem;
+                margin-right: 0.8rem;
+                /* margin-bottom:10px; */
+            }
+
+            .Sub-title {
+                border-radius: 1em;
+                width: 45%;
+                text-align: center;
+                Padding: 1rem 2rem;
+                margin: 1rem 0rem;
+            }
+
         }
     </style>
 
@@ -473,7 +474,7 @@
                 <div class="btn-deg">
                     <div class="check-btn">
                         <div class="check-btn-sub"></div>
-                        <button type="submit">
+                        <button type="submit" onclick="myFunction()">
                             Predict Cancer
                         </button>
                     </div>
@@ -491,28 +492,41 @@
 
         <!-- Modal -->
 
-        <button type="button" class="predicted_text" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <button type="button" class="predicted_text" data-bs-toggle="modal" data-bs-target="#staticBackdrop" disabled>
             Show Result
         </button>
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Result</h5>
+                        <h5 class="modal-title" id="staticBackdropLabel">Result</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         {{ prediction_text }}
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="update()">Close</button>
                     </div>
                 </div>
             </div>
         </div>
 
+
     </div>
+
+
+
+    <script>
+        function myFunction() {
+            document.getElementById("predicted_text").enabled = true;
+        }
+        function update()() {
+            document.getElementById("predicted_text").disabled = true;
+        }
+    </script>
 
 </body>
 
