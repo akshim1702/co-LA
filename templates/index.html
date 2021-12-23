@@ -205,22 +205,26 @@
             float: right;
             background-color: rgba(255, 255, 255, .8);
             color: black;
-            border-radius: 1em;
+
+
             text-align: center;
             display: flex;
             justify-items: center;
-            box-shadow: 0 0 .25em rgba(0, 0, 0, .25);
             box-sizing: border-box;
-            width: 35%;
+            width: 45%;
             text-align: center;
             Padding: 1rem 4rem;
             margin: 0rem 0rem;
+            border-radius: 8px;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            -ms-border-radius: 8px;
+            -o-border-radius: 8px;
 
         }
 
         .predicted_text h1 {
             font-size: 3rem;
-
         }
 
         button:disabled,
@@ -272,6 +276,110 @@
                 margin: 1rem 0rem;
             }
 
+        }
+
+
+
+
+
+
+
+
+        .main-div {
+            position: relative;
+            margin: 10px;
+            background-color: rgba(255, 255, 255, .8);
+        }
+
+        .main-div2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-box-shadow: 0 0 17px 3px #ffff01, 0 0 4px 2px #ffff01;
+            box-shadow: 0 0 17px 3px #ffff01, 0 0 4px 2px #ffff01;
+            z-index: -1;
+            -webkit-animation-name: gradient-shadow;
+            animation-name: gradient-shadow;
+            -webkit-animation-timing-function: ease;
+            animation-timing-function: ease;
+            -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -ms-border-radius: 5px;
+            -o-border-radius: 5px;
+        }
+
+
+
+        @-webkit-keyframes gradient-shadow {
+            0% {
+                -webkit-box-shadow: 0 0 17px 3px #C586C0, 0 0 4px 2px #C586C0;
+                box-shadow: 0 0 17px 3px #C586C0, 0 0 4px 2px #C586C0;
+            }
+
+            20% {
+                -webkit-box-shadow: 0 0 17px 3px #0ff, 0 0 4px 2px #0ff;
+                box-shadow: 0 0 17px 3px #0ff, 0 0 4px 2px #0ff;
+            }
+
+            40% {
+                -webkit-box-shadow: 0 0 17px 3px #0f0, 0 0 4px 2px #0f0;
+                box-shadow: 0 0 17px 3px #0f0, 0 0 4px 2px #0f0;
+            }
+
+            60% {
+                -webkit-box-shadow: 0 0 17px 3px #ffff01, 0 0 4px 2px #ffff01;
+                box-shadow: 0 0 17px 3px #ffff01, 0 0 4px 2px #ffff01;
+            }
+
+            80% {
+                -webkit-box-shadow: 0 0 17px 3px #f00, 0 0 4px 2px #f00;
+                box-shadow: 0 0 17px 3px #f00, 0 0 4px 2px #f00;
+            }
+
+            100% {
+                -webkit-box-shadow: 0 0 17px 3px #C586C0, 0 0 4px 2px #C586C0;
+                box-shadow: 0 0 17px 3px #C586C0, 0 0 4px 2px #C586C0;
+            }
+        }
+
+        @keyframes gradient-shadow {
+            0% {
+                -webkit-box-shadow: 0 0 17px 3px #C586C0, 0 0 4px 2px #C586C0;
+                box-shadow: 0 0 17px 3px #C586C0, 0 0 4px 2px #C586C0;
+            }
+
+            20% {
+                -webkit-box-shadow: 0 0 17px 3px #0ff, 0 0 4px 2px #0ff;
+                box-shadow: 0 0 17px 3px #0ff, 0 0 4px 2px #0ff;
+            }
+
+            40% {
+                -webkit-box-shadow: 0 0 17px 3px #0f0, 0 0 4px 2px #0f0;
+                box-shadow: 0 0 17px 3px #0f0, 0 0 4px 2px #0f0;
+            }
+
+            60% {
+                -webkit-box-shadow: 0 0 17px 3px #ffff01, 0 0 4px 2px #ffff01;
+                box-shadow: 0 0 17px 3px #ffff01, 0 0 4px 2px #ffff01;
+            }
+
+            80% {
+                -webkit-box-shadow: 0 0 17px 3px #f00, 0 0 4px 2px #f00;
+                box-shadow: 0 0 17px 3px #f00, 0 0 4px 2px #f00;
+            }
+
+            100% {
+                -webkit-box-shadow: 0 0 17px 3px #C586C0, 0 0 4px 2px #C586C0;
+                box-shadow: 0 0 17px 3px #C586C0, 0 0 4px 2px #C586C0;
+            }
         }
     </style>
 
@@ -480,7 +588,7 @@
                 <div class="btn-deg">
                     <div class="check-btn">
                         <div class="check-btn-sub"></div>
-                        <button type="submit" onclick="myFunction()">
+                        <button type="submit">
                             Predict Cancer
                         </button>
                     </div>
@@ -497,12 +605,14 @@
 
 
         <!-- Modal -->
+        <div class="predicted_text main-div2 main-div">
 
-        <button type="button" class="predicted_text" data-bs-toggle="modal" data-bs-target="#staticBackdrop" disabled>
-            Show Result
-        </button>
+            <h1 type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Result:-&nbsp; {{ prediction_text }}
+            </h1>
+        </div>
 
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        <!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
             aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -519,21 +629,15 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
 
     </div>
 
 
 
-    <script>
-        function myFunction() {
-            document.getElementById("predicted_text").disabled = false;
-        }
-        function update()() {
-            document.getElementById("predicted_text").disabled = true;
-        }
-    </script>
+
+
 
 </body>
 
