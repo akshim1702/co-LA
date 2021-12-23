@@ -223,6 +223,12 @@
 
         }
 
+        button:disabled,
+        button[disabled] {
+            background-color: #cccccc;
+            color: #666666;
+        }
+
         @media (max-width:1600px) {
             .Container {
                 padding: 10px 20px;
@@ -508,7 +514,8 @@
                         {{ prediction_text }}
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="update()">Close</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                            onclick="update()">Close</button>
                     </div>
                 </div>
             </div>
